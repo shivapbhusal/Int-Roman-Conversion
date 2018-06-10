@@ -12,7 +12,7 @@ class TestIntRomanConverter(unittest.TestCase):
 
     def testIntToRoman(self):
     	converter=irc.IntRomanConverter()
-    	self.assertEqual(2,2)
+    	self.assertEqual()
 
     def testRomanToInt(self):
     	converter=irc.IntRomanConverter()
