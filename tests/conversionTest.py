@@ -17,6 +17,7 @@ class TestIntRomanConverter(unittest.TestCase):
         self.assertEqual("IX", converter.intToRoman(9))
         self.assertEqual("XCIX", converter.intToRoman(99))
         self.assertEqual("CI", converter.intToRoman(101))
+        self.assertEqual("CD", converter.intToRoman(400))
 
     def testRomanToInt(self):
     	converter=irc.IntRomanConverter()
