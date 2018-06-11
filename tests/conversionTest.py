@@ -12,11 +12,15 @@ class TestIntRomanConverter(unittest.TestCase):
 
     def testIntToRoman(self):
     	converter=irc.IntRomanConverter()
-    	self.assertEqual()
+    	self.assertEqual(2,2)
 
     def testRomanToInt(self):
     	converter=irc.IntRomanConverter()
-    	self.assertEqual(2,2)
+    	self.assertEqual(2,converter.romanToInt("II"))
+        self.assertEqual(1, converter.romanToInt("I"))
+        self.assertEqual(9, converter.romanToInt("IX"))
+        self.assertEqual(99, converter.romanToInt("XCIX"))
+        self.assertEqual(101, converter.romanToInt("CI"))
 
 if __name__ == '__main__':
     unittest.main()

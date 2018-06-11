@@ -1,6 +1,8 @@
 '''
 A Python class to convert Integer to Roman and Vice Versa
 Created by Shiva Bhusal
+
+The largest number that can be represented is 4999.
 '''
 import sys
 
@@ -88,7 +90,3 @@ class IntRomanConverter:
                     i=i+1
                     j =j+1
             return num
-
-obj=IntRomanConverter()
-
-print(obj.romanToInt(str(sys.argv[1])))
