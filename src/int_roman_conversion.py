@@ -2,7 +2,7 @@
 A Python class to convert Integer to Roman and Vice Versa
 Created by Shiva Bhusal
 
-The largest number that can be represented is 4999.
+It can convert the numbers in the range ( 1 - 4999 )
 '''
 import sys
 
@@ -18,7 +18,9 @@ intToRomanDict={
 9:'IX', 
 10:'X', 
 50:'L', 
-100:'C'
+100:'C',
+500:'D',
+1000:'M'
 }
 
 romanIntDict={
@@ -31,39 +33,57 @@ romanIntDict={
     "M":1000
 }
 
-numList = [10,50,100,500,1000,5000,10000]
-
 class IntRomanConverter:
-    def findnN(self,x):
-        n=0
-        N=0
-        while(N<x):
-            N=numList[n]
-            n=n+1
-        N=numList[n-1]
-        q=int(x/N)
-        print(N)
-        print(q)
-        return N,q
-
-    def intToRoman(self,num):
+    def intToRoman(self,N):
         '''
         :type s : int
         :rtype: str
 
         '''
-        if num in intToRomanDict:
-            return intToRomanDict[num]
-        elif num==0:
-            return ''
+        if N in intToRomanDict:
+            return intToRomanDict[N]
         else:
-            N,q =self.findnN(num)
-            romanValue=''
-            while(q):
-                romanValue = romanValue + intToRomanDict[N]
-                q = q-1
-            rem = num % N
-            return romanValue + self.intToRoman(rem)
+            roman = ""
+            if N > 1000:
+                q = int(N/1000)
+                rem = N %1000
+                for i in range(q):
+                    roman = roman + self.intToRoman(1000)
+                if rem:
+                    roman = roman + self.intToRoman(rem)
+
+            elif N > 500 and N <1000:
+                q = int(N/500)
+                rem = N%500
+                for i in range(q):
+                    roman = roman+self.intToRoman(500)
+                if rem:
+                    roman = roman + self.intToRoman(rem)
+            elif N > 100 and N <500:
+                q = int(N/100)
+                rem = N%100
+                for i in range(q):
+                    roman = roman + self.intToRoman(100)
+                if rem:
+                    roman = roman + self.intToRoman(rem)
+            elif N > 50 and N <100:
+                q = int(N/50)
+                rem = N%50
+                for i in range(q):
+                    roman = roman + self.intToRoman(50)
+                if rem:
+                    roman = roman + self.intToRoman(rem)
+            elif N >10 and N <50:
+                q = int(N/10)
+                rem = N%10
+                for i in range(q):
+                    roman = roman + self.intToRoman(10)
+                if rem:
+                    roman = roman + self.intToRoman(rem)
+            else:
+                return intToRomanDict[N]
+
+            return roman
 
     def romanToInt(self,romanNum):
         '''
@@ -90,3 +110,7 @@ class IntRomanConverter:
                     i=i+1
                     j =j+1
             return num
+
+obj = IntRomanConverter()
+for i in range(1,100):
+    print(obj.intToRoman(i))
