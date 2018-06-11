@@ -17,10 +17,12 @@ intToRomanDict={
 8:'VIII', 
 9:'IX', 
 10:'X', 
-50:'L', 
+50:'L',
+90: 'XC',
 100:'C',
 500:'D',
 1000:'M'
+
 }
 
 romanIntDict={
@@ -66,7 +68,14 @@ class IntRomanConverter:
                     roman = roman + self.intToRoman(100)
                 if rem:
                     roman = roman + self.intToRoman(rem)
-            elif N > 50 and N <100:
+            elif N >90 and N <100:
+                q = int(N/90)
+                rem = N%90
+                for i in range(q):
+                    roman = roman + self.intToRoman(90)
+                if rem:
+                    roman = roman + self.intToRoman(rem)
+            elif N > 50 and N <90:
                 q = int(N/50)
                 rem = N%50
                 for i in range(q):
@@ -110,7 +119,3 @@ class IntRomanConverter:
                     i=i+1
                     j =j+1
             return num
-
-obj = IntRomanConverter()
-for i in range(1,100):
-    print(obj.intToRoman(i))

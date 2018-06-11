@@ -3,7 +3,7 @@ A test class for IntRomanConversion class.
 '''
 
 import sys
-sys.path.append(r'src') # change this if you are using Windows.  
+sys.path.append(r'src') # change this path if you are using Windows.  
 #print(sys.path)
 import unittest
 import int_roman_conversion as irc
@@ -12,7 +12,11 @@ class TestIntRomanConverter(unittest.TestCase):
 
     def testIntToRoman(self):
     	converter=irc.IntRomanConverter()
-    	self.assertEqual(2,2)
+    	self.assertEqual("II", converter.intToRoman(2))
+        self.assertEqual("I", converter.intToRoman(1))
+        self.assertEqual("IX", converter.intToRoman(9))
+        self.assertEqual("XCIX", converter.intToRoman(99))
+        self.assertEqual("CI", converter.intToRoman(101))
 
     def testRomanToInt(self):
     	converter=irc.IntRomanConverter()
