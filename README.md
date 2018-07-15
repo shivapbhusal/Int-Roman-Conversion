@@ -26,3 +26,6 @@ import intRomanConverter as irc
 irc.intToRoman(10)
 ```
 
+# Author 
+Shiva Bhusal
+
