@@ -1,9 +1,9 @@
 from distutils.core import setup
 
 setup(
-        name='romanIntConverter',
+        name='intRomanConverter',
         version = '1.0',
-        packages =['romanIntConverter'],
+        packages =['intRomanConverter'],
         url = '',
         download_url='',
         license ='',
