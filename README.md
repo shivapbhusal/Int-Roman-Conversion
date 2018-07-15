@@ -3,11 +3,7 @@ A Python Library to convert Roman to Integer and Vice Versa
 
 # Installation Steps:
 
-[1] Get a copy of the Project. 
-
-```shell
-git clone https://github.com/shivapbhusal/Roman-Int-Conversion.git
-```
+[1] Get a copy of the Project. ```shell git clone https://github.com/shivapbhusal/Roman-Int-Conversion.git```
 
 [2] Open your terminal, navigate to your project folder, and enter this command: 
 
